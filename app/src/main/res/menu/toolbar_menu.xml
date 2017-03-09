@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_contents"
+        android:title="@string/action_content"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_loading"
+        android:title="@string/action_loading"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_error"
+        android:title="@string/action_error"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_networkError"
+        android:title="@string/action_networkError"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_emptyData"
+        android:title="@string/action_emptyData"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_startActivity"
+        android:title="@string/action_startActivity"
+        app:showAsAction="never" />
+
+</menu>

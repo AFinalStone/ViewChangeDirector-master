@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">页面状态切换器</string>
+    <string name="action_content">页面内容</string>
+    <string name="action_loading">正在加载</string>
+    <string name="action_emptyData">没有数据</string>
+    <string name="action_error">错误内容</string>
+    <string name="action_networkError">网络异常</string>
+    <string name="action_startActivity">打开新的Activity</string>
+</resources>
