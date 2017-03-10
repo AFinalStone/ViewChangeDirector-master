@@ -40,5 +40,4 @@
     <style name="OverflowButtonStyle" parent="@android:style/Widget.ActionButton.Overflow">
         <item name="android:src">@mipmap/ic_menu_setting</item>
     </style>
-
 </resources>

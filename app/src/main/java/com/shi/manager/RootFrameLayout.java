@@ -76,13 +76,13 @@ public class RootFrameLayout extends FrameLayout {
     }
 
     public void addAllLayoutToLayout() {
-        if(mStatesLayoutManager.contentLayoutResId != 0)
+        if(mStatesLayoutManager.contentView != null)
         {
-            View resView = LayoutInflater.from(getContext()).inflate(mStatesLayoutManager.contentLayoutResId, null);
-            layoutSparseArray.put(RootFrameLayout.LAYOUT_CONTENT_ID, resView);
-            addView(resView);
+            layoutSparseArray.put(RootFrameLayout.LAYOUT_CONTENT_ID, mStatesLayoutManager.contentView);
+            addView(mStatesLayoutManager.contentView);
         }
         if(mStatesLayoutManager.loadingLayoutResId != 0){
+
             View resView = LayoutInflater.from(getContext()).inflate(mStatesLayoutManager.loadingLayoutResId, null);
             layoutSparseArray.put(RootFrameLayout.LAYOUT_LOADING_ID, resView);
             resView.setVisibility(GONE);

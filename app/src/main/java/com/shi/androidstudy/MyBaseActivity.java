@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public abstract class MyBaseActivity extends AppCompatActivity {
     /**
      * 初始化布局文件
      **/
-    public abstract void initView();
+    public abstract View initContentView();
 
     /**
      * 初始化页面数据
@@ -62,12 +63,14 @@ public abstract class MyBaseActivity extends AppCompatActivity {
         displayDeviceWidth = getResources().getDisplayMetrics().widthPixels;
         displayDeviceHeight = getResources().getDisplayMetrics().heightPixels;
         builder = new StateLayoutManagerBuilder(this)
+                .setContentView(initContentView())
                 .setLoadingLayoutResId(R.layout.activity_loading)
                 .setContentEmptyLayoutResId(R.layout.activity_emptydata)
                 .setContentErrorResId(R.layout.activity_error)
                 .setNetWorkErrorLayoutResId(R.layout.activity_networkerror)
                 .setRetryViewId(R.id.button_try);
-        initView();
+        slManager = builder.create();
+        linearLayout_main.addView(slManager.getRootLayout(),1);
         initData();
     }
 

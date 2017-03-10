@@ -3,6 +3,7 @@ package com.shi.manager;
 import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
+import android.view.View;
 import android.view.ViewStub;
 
 /**
@@ -11,9 +12,9 @@ import android.view.ViewStub;
 public class StateLayoutManagerBuilder {
 
      Context context;
+     View contentView;
     //不同情况的页面内容资源ID和ViewStub
      int loadingLayoutResId;
-     int contentLayoutResId;
      ViewStub netWorkErrorVs;
      ViewStub emptyDataVs;
      ViewStub errorVs;
@@ -30,14 +31,14 @@ public class StateLayoutManagerBuilder {
     }
 
     //加载页面资源ID
-    public StateLayoutManagerBuilder setLoadingLayoutResId(@LayoutRes int loadingLayoutResId) {
-        this.loadingLayoutResId = loadingLayoutResId;
+    public StateLayoutManagerBuilder setLoadingLayoutResId(@LayoutRes int contentLayoutResId) {
+        this.loadingLayoutResId = contentLayoutResId;
         return this;
     }
 
     //正文内容资源ID
-    public StateLayoutManagerBuilder setContentLayoutResId(@LayoutRes int contentLayoutResId) {
-        this.contentLayoutResId = contentLayoutResId;
+    public StateLayoutManagerBuilder setContentView(View contentView) {
+        this.contentView = contentView;
         return this;
     }
 

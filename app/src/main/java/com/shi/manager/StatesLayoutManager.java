@@ -10,8 +10,9 @@ import android.view.ViewStub;
  */
 public class StatesLayoutManager {
 
+    final View contentView;
+    //不同情况的页面内容资源ID和ViewStub
     final int loadingLayoutResId;
-    final int contentLayoutResId;
     final ViewStub netWorkErrorVs;
     final int netWorkErrorRetryViewId;
     final ViewStub emptyDataVs;
@@ -26,7 +27,7 @@ public class StatesLayoutManager {
     public StatesLayoutManager(StateLayoutManagerBuilder builder) {
 
         this.loadingLayoutResId = builder.loadingLayoutResId;
-        this.contentLayoutResId = builder.contentLayoutResId;
+        this.contentView = builder.contentView;
         this.netWorkErrorVs = builder.netWorkErrorVs;
         this.netWorkErrorRetryViewId = builder.netWorkErrorRetryViewId;
         this.emptyDataVs = builder.emptyDataVs;
@@ -35,6 +36,7 @@ public class StatesLayoutManager {
         this.errorRetryViewId = builder.errorRetryViewId;
         this.retryViewId = builder.retryViewId;
         onRetryListener = builder.onRetryListener;
+
 
         rootFrameLayout = new RootFrameLayout(builder.context);
         rootFrameLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
