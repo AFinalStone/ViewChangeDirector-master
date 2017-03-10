@@ -12,6 +12,7 @@ public class MainActivity extends MyBaseActivity {
 
     @Override
     public View initContentView() {
+       setReturnStatus(true);
        return  View.inflate(mContext, R.layout.activity_main, null);
     }
 
