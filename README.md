@@ -4,6 +4,8 @@
 ，本项目就是用一个管理类来把这些布局view管理封装起来，使view之间的切换更加简洁方便。首先感谢
 [chenpengfei88的statusLayout项目](https://github.com/chenpengfei88/StatusLayout)
 
+![statusLayout项目效果图](GIF/hao.gif)<br>
+
 本项目对StatusLayoutManager和StatusLayoutManagerBuild进行了修改和调整，并且把Activity的页面内容
 统一抽取出来，产生MyBaseActivity,这样整个项目的所有Activity界面风格能够更方便的趋于统一。
 
