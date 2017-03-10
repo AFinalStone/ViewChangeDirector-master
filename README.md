@@ -6,8 +6,9 @@
 
 ![statusLayout项目效果图](GIF/hao.gif)<br>
 
-本项目对StatusLayoutManager和StatusLayoutManagerBuild进行了修改和调整，并且把Activity的页面内容
-统一抽取出来，产生MyBaseActivity,这样整个项目的所有Activity界面风格能够更方便的趋于统一。
+本项目对StatusLayoutManager和StatusLayoutManagerBuild进行了修改和调整，并且把整个项目的所有activity的
+页面内容统一抽取出来，产生MyBaseActivity，在MyBaseActivity中加载页面标题，loadingView，errorView，
+netWorkError等不同情况的页面,使得整个项目所有Activity的页面风格能够更方便的趋于统一。
 
 首先来看一下一个普通的Activity如何使用：
 ```java
@@ -208,7 +209,7 @@ public abstract class MyBaseActivity extends AppCompatActivity {
 }
 ```
 代码中主要用到了一个StatesLayoutManager类来管理各种情况的布局View进行切换，而StatesLayoutManager类的产生
-用到了builder模式，可以自由的添加你需要的布局View，通过statusLayoutManager.getRootLayout()方法
+用到了builder建造者模式，可以自由的添加你需要的布局View，通过statusLayoutManager.getRootLayout()方法
 可以得到管理这些布局View的根布局，然后把它添加到你Activity中xml文件的根布局当中。
 
 StatusLayoutManager提供了一系列的方法来显示不同布局View之间的切换
@@ -224,6 +225,7 @@ statusLayoutManager.showError(); 显示error view
 statusLayoutManager.showNetWorkError();  显示网络异常view
 
 项目还用到了一个蛮不错的进度条Loading加载开源项目
+
 [项目地址](https://github.com/81813780/AVLoadingIndicatorView)
 
 ![效果图2](GIF/GIF_02.gif)<br>
