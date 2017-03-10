@@ -21,27 +21,9 @@ public class RecyclerViewActivity extends MyBaseActivity {
 
     @Override
     public void initData() {
-        builder.setOnRetryListener(new OnRetryListener() {
-                    @Override
-                    public void onRetry() {
-                        slManager.showLoading();
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                SystemClock.sleep(2000);
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        slManager.showContent();
-                                    }
-                                });
-                            }
-                        }).start();
-                    }
-                });
+        slManager.showLoading();
 
         mRecycler= (RecyclerView) findViewById(R.id.recycler);
-
         GridLayoutManager layoutManager=new GridLayoutManager(this,4);
         mRecycler.setLayoutManager(layoutManager);
         mRecycler.setAdapter(new RecyclerView.Adapter<IndicatorHolder>() {
@@ -69,6 +51,12 @@ public class RecyclerViewActivity extends MyBaseActivity {
                 return INDICATORS.length;
             }
         });
+        mRecycler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                slManager.showContent();
+            }
+        }, 2000);
     }
 
 

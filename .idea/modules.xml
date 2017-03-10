@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ViewChangeDirector-master.iml" filepath="$PROJECT_DIR$/ViewChangeDirector-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.shi.androidstudy.loadingprogressbar/com.shi.androidstudy.loadingprogressbar.iml" filepath="$PROJECT_DIR$/com.shi.androidstudy.loadingprogressbar/com.shi.androidstudy.loadingprogressbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com/com.shi.androidstudy.loadingprogressbar.iml" filepath="$PROJECT_DIR$/com/com.shi.androidstudy.loadingprogressbar.iml" />
     </modules>
   </component>
 </project>

@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.shi.manager.OnRetryListener;
 import com.shi.manager.StateLayoutManagerBuilder;
 import com.shi.manager.StatesLayoutManager;
 
@@ -47,6 +48,11 @@ public abstract class MyBaseActivity extends AppCompatActivity {
      **/
     public abstract void initData();
 
+    public void retryGetData(){
+        slManager.showLoading();
+    }
+
+
     protected long previewBackTime;
 
     protected StateLayoutManagerBuilder builder;
@@ -68,7 +74,13 @@ public abstract class MyBaseActivity extends AppCompatActivity {
                 .setContentEmptyLayoutResId(R.layout.activity_emptydata)
                 .setContentErrorResId(R.layout.activity_error)
                 .setNetWorkErrorLayoutResId(R.layout.activity_networkerror)
-                .setRetryViewId(R.id.button_try);
+                .setRetryViewId(R.id.button_try)
+                .setOnRetryListener(new OnRetryListener() {
+                    @Override
+                    public void onRetry() {
+                        retryGetData();
+                    }
+                });
         slManager = builder.create();
         linearLayout_main.addView(slManager.getRootLayout(),1);
         initData();

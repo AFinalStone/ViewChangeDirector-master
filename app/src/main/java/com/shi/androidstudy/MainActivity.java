@@ -18,32 +18,26 @@ public class MainActivity extends MyBaseActivity {
 
     @Override
     public void initData() {
-        builder .setOnRetryListener(new OnRetryListener() {
-            @Override
-            public void onRetry() {
-                slManager.showLoading();
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        SystemClock.sleep(3000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                slManager.showContent();
-                            }
-                        });
-                    }
-                }).start();
-            }
-        });
+
         slManager.showLoading();
         linearLayout_main.postDelayed(new Runnable() {
             @Override
             public void run() {
                 slManager.showContent();
             }
-        },3000);
+        },1000);
     }
+
+    public void retryGetData(){
+        super.retryGetData();
+        linearLayout_main.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                slManager.showContent();
+            }
+        },1000);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

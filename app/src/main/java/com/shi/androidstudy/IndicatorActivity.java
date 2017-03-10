@@ -27,12 +27,6 @@ public class IndicatorActivity extends MyBaseActivity{
         avi.setIndicator(indicator);
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
     public void hideClick(View view) {
          avi.smoothToHide();
 //        or avi.hide();
